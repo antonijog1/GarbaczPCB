@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projekt 1 – GarbaczPCB</title>
+  <title>Przed wzmacniacz mikrofonowy THAT1512 – GarbaczPCB</title>
   <link rel="icon" type="image/png" href="GarbaczPCB.png">
   <link rel="stylesheet" href="styl.css">
 </head>
@@ -17,19 +17,52 @@
 </header>
 
 <section class="content">
-  <h2>Projekt 1</h2>
+  <h2>Przed wzmacniacz mikrofonowy THAT1512</h2>
 
   <p class="opis-projektu">
-    Projekt PCB – widok warstwy TOP.<br>
-    Pliki Gerber przygotowane pod produkcję JLCPCB.
+    Podprojekt przedstawia niskoszumowy przedwzmacniacz mikrofonowy inspirowany projektem DIYPerks, przeznaczony do współpracy z kapsułą elektretową.<br><br> Sygnał z mikrofonu trafia najpierw na tranzystor JFET 2N4416, który pracuje jako bufor o bardzo wysokiej impedancji wejściowej, dzięki czemu nie obciąża kapsuły i zapewnia lepszy stosunek sygnału do szumu. Jego patern nie jest uwzględniony na płytce.<br><br>
+
+    Następnie sygnał jest podawany różnicowo na wzmacniacz instrumentalny THAT1512, który odpowiada za główne wzmocnienie sygnału audio przy bardzo niskim poziomie szumów. Wzmocnienie jest ustalane rezystorem pomiędzy pinami gain. Kondensatory na wejściu i wyjściu wzmacniacza zapewniają filtracje zasilania.<br><br>
+
+    Zasilanie realizowane jest z 5 V USB, które poprzez przetwornicę NMA515SC generuje napięcia symetryczne ±15 V, niezbędne do poprawnej pracy THAT1512. Kondensatory elektrolityczne i rezystory w sekcji zasilania odpowiadają za filtrację, stabilizację napięć oraz redukcję zakłóceń. Na wyjściu otrzymywany jest czysty, wzmocniony sygnał audio względem masy audio, gotowy do dalszej obróbki lub konwersji ADC.<br><br>
   </p>
 
   <div class="pcb-single">
     <div class="pcb-card">
-      <img src="p5top.jpg" alt="Projekt 1 – Top Layer PCB">
-      <span>Top Layer</span>
+      <img src="p1top.jpg" alt="Zwrotnica 3-drożna – Top Layer PCB">
+      <span>Top Layer PCB</span>
     </div>
   </div>
+
+  <h3 class="sekcja-tytul">Lista komponentów (BOM)</h3>
+
+  <div class="bom-wrapper">
+    <table class="bom">
+      <thead>
+        <tr>
+          <th>Komponent</th>
+          <th>Wartość</th>
+          <th>Ilość</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>DIP-8 socket</td><td>-</td><td>1</td></tr>
+        <tr><td>THAT 1512</td><td>DIP-8</td><td>1</td></tr>
+        <tr><td>U1 - <a href="https://www.tme.eu/no/en/details/nma0515sc/dc-dc-converters/murata-power-solutions/">NMA515SC</a></td><td>±15 V</td><td>1</td></tr>
+        <tr><td>U2 - <a href="https://www.tme.eu/no/en/details/1-2199298-2/standard-dip-sockets/te-connectivity/">DIP-8 socket</a></td><td>-</td><td>1</td></tr>
+        <tr><td>R1, R2, R5, R6 - <a href="https://www.tme.eu/pl/details/wr08x2201ftl/rezystory-smd/walsin/">Rezystor: thick film</a></td><td>2,2kΩ 0805</td><td>4</td></tr>
+        <tr><td>R7, R8 - <a href="https://www.tme.eu/pl/details/wr08x1000ftl/rezystory-smd/walsin/">Rezystor: thick film</a></td><td>100Ω 0805</td><td>2</td></tr>
+        <tr><td>R3, R4 - <a href="https://www.tme.eu/pl/details/wr08x1000ftl/rezystory-smd/walsin/">Rezystor: thick film</a></td><td>3,9kΩ 0805</td><td>2</td></tr>
+        <tr><td>NPC1, NPC2, NPC3 - <a href="https://www.tme.eu/pl/details/cl21a226mpqnnne/kondensatory-mlcc-smd/samsung/">Kondensator: ceramiczny</a></td><td>22uF 0805</td><td>3</td></tr>
+        <tr><td>C1, C2, C3, C4 - <a href="https://www.tme.eu/pl/details/ce-2200_25pht-y/kondensatory-elektrolityczne-tht/aishi/ewh1em222k25ot/">Kondensator: elektrolityczny</a></td><td>2200uF 12,5mm</td><td>4</td></tr>
+      </tbody>
+    </table>
+  </div><br><br>
+
+  <p class="opis-projektu">
+    W celu ustawienia odpowiedniego wzmocnienia zaleca sie użycie 12-stopniowego, obrotowego przełącznika z podpiętymi rezystorami. <br><br>Najlepiej użyć takich albo bardzo zbliżonych wartości: <br>560Ω, 270Ω, 150Ω, 82Ω, 56Ω, 27Ω, 18Ω, 15Ω, 11Ω, 9.1Ω, 5.1Ω. 
+  </p>
+
 </section>
 
 </body>
