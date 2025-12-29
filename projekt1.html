@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zwrotnica 3-drożna – GarbaczPCB</title>
+  <link rel="icon" type="image/png" href="GarbaczPCB.png">
+  <link rel="stylesheet" href="styl.css">
+</head>
+<body>
+
+<header>
+  <div class="logo">GarbaczPCB</div>
+  <nav>
+    <a href="index.html">← Powrót</a>
+  </nav>
+</header>
+
+<section class="content">
+  <h2>Zwrotnica 3-drożna</h2>
+
+  <p class="opis-projektu">
+    Zwrotnica trójdrożna – kanał prawy odpowiada za subwoofer,  
+    kanał lewy za sekcję średnio- i wysokotonową (wspólna masa).<br><br>
+
+    Projekt przygotowany pod głośniki:
+    Subwoofer 30W RMS 4Ω,  
+    Mid 20W RMS 4Ω,  
+    Tweeter 10W RMS 4Ω.<br><br>
+
+    Układ poprawnie pracuje również przy większej mocy.
+  </p>
+
+  <div class="pcb-single">
+    <div class="pcb-card">
+      <img src="p1top.jpg" alt="Zwrotnica 3-drożna – Top Layer PCB">
+      <span>Top Layer PCB</span>
+    </div>
+  </div>
+
+  <h3 class="sekcja-tytul">Lista komponentów (BOM)</h3>
+
+  <div class="bom-wrapper">
+    <table class="bom">
+      <thead>
+        <tr>
+          <th>Komponent</th>
+          <th>Wartość</th>
+          <th>Ilość</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>L000-0238 - Cewka powietrzna</td><td>3,3 mH</td><td>1</td></tr>
+        <tr><td>L000-0803 - Cewka powietrzna</td><td>0,2 mH</td><td>1</td></tr>
+        <tr><td>CE1 - <a href="https://www.tme.eu/pl/details/uvp1h331mhd/kondensatory-elektrolityczne-tht/nichicon/">Kondensator: foliowy</a></td><td>330uF</td><td>1</td></tr>
+        <tr><td>CPOL1, CPOL2 - <a href="https://www.tme.eu/pl/details/ecqe1685kf/kondensatory-foliowe-tht/panasonic/">Kondensator: poliestrowy</a></td><td>6,8uF</td><td>2</td></tr>
+        <tr><td>R1 - Rezystor ceramiczny</td><td>1 Ω</td><td>1</td></tr>
+        <tr><td>R2 - Rezystor ceramiczny</td><td>3 Ω</td><td>1</td></tr>
+        <tr><td>R3</td><td>Wartość dowolna - im większy tym ciszej gra głośnik wysokotonowy</td><td>1</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p class="opis-projektu">
+    Zwrotnica jest przystosowana do pracy z podanymi poniżej końcówkami mocy:<br>
+    <a href="https://pl.aliexpress.com/item/1005006449306140.html?spm=a2g0o.order_list.order_list_main.140.4c971c24SMOGXi&gatewayAdapt=glo2pol">Wzmacniacz mono 100W</a><br>lub<br><a href="https://pl.aliexpress.com/item/1005005359403255.html?spm=a2g0o.order_list.order_list_main.210.4c971c24SMOGXi&gatewayAdapt=glo2pol">XH-A232 30W + 30W</a><br>
+    Jeśli decydujesz sie na wzmacniacz XH-A232 potrzebujesz najlepiej dwie sztuki na każdą zwrotnice, pojedynczy wzmacniacz też da rade lecz subwoofer może brzmieć cicho. Jeśli twój projekt przewiduje budowe dwóch kolumn aby wykorzystać opcje TWS, w takim przypadku rekomenduje kupno 2x wzmacniacz 100W mono lub 4x XH-A232 30W + 30W. 
+  </p>
+
+</section>
+
+</body>
+</html>

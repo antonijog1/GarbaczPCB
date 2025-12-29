@@ -1,0 +1,278 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --pcb-green: #1f7a4f;
+  --pcb-green-glow: rgba(31, 122, 79, 0.35);
+  --bg-dark: #050505;
+  --bg-card: #0f1512;
+  --text-main: #e6e6e6;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--bg-dark);
+  color: var(--text-main);
+}
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.65);
+  backdrop-filter: blur(6px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  z-index: 1000;
+  border-bottom: 1px solid #111;
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: var(--pcb-green);
+}
+
+nav a {
+  color: var(--text-main);
+  margin-left: 40px;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: var(--pcb-green);
+}
+
+.hero {
+  height: 100vh;
+  background-image: url('tlo.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(0,0,0,0.25),
+    rgba(0,0,0,0.7)
+  );
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-content img {
+  width: 80%;
+  max-width: 420px;
+  filter: drop-shadow(0 0 30px var(--pcb-green-glow));
+}
+
+.content {
+  padding: 120px 20px 80px;
+  text-align: center;
+}
+
+.content h2 {
+  margin-bottom: 50px;
+  font-size: 2rem;
+  color: var(--pcb-green);
+}
+
+.projekty-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.projekt {
+  background: var(--bg-card);
+  border-radius: 16px;
+  overflow: hidden;
+  text-decoration: none;
+  color: var(--text-main);
+  border: 1px solid #132019;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.projekt img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+.projekt span {
+  display: block;
+  padding: 18px;
+  font-size: 1.2rem;
+  background: #0b120e;
+  border-top: 1px solid #132019;
+}
+
+.projekt:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 30px var(--pcb-green-glow);
+}
+
+.kontakt {
+  background: #070a08;
+}
+
+.kontakt a {
+  color: var(--pcb-green);
+  text-decoration: none;
+}
+
+/* RESPONSYWNOŚĆ */
+@media (max-width: 900px) {
+  .projekty-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .projekty-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===== STRONA PROJEKTU (projekt1.html) ===== */
+
+.opis-projektu {
+  max-width: 850px;
+  margin: 0 auto 60px;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #cfcfcf;
+}
+
+.pcb-single {
+  display: flex;
+  justify-content: center;
+}
+
+.pcb-card {
+  background: var(--bg-card);
+  border-radius: 18px;
+  padding: 28px;
+  border: 1px solid #132019;
+  max-width: 1000px;
+  width: 100%;
+  box-shadow: 0 0 30px rgba(0,0,0,0.5);
+  transition: transform 0.35s, box-shadow 0.35s, border 0.35s;
+}
+
+.pcb-card:hover {
+  transform: translateY(-6px);
+  border: 1px solid var(--pcb-green);
+  box-shadow: 0 0 40px var(--pcb-green-glow);
+}
+
+.pcb-card img {
+  width: 100%;
+  border-radius: 14px;
+  background: #000;
+  display: block;
+}
+
+.pcb-card span {
+  display: block;
+  margin-top: 20px;
+  font-size: 1.15rem;
+  color: var(--pcb-green);
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+/* lepsze odstępy pod fixed headerem */
+body > .content {
+  padding-top: 160px;
+}
+
+/* responsywność projektu */
+@media (max-width: 700px) {
+  .pcb-card {
+    padding: 20px;
+  }
+
+  .pcb-card span {
+    font-size: 1.05rem;
+  }
+}
+
+/* ===== BOM / LISTA KOMPONENTÓW ===== */
+
+.sekcja-tytul {
+  margin: 90px 0 35px;
+  font-size: 1.6rem;
+  color: var(--pcb-green);
+}
+
+.bom-wrapper {
+  overflow-x: auto;
+}
+
+.bom {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  border-collapse: collapse;
+  background: var(--bg-card);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 0 25px rgba(0,0,0,0.45);
+}
+
+.bom th,
+.bom td {
+  padding: 16px 18px;
+  text-align: left;
+  border-bottom: 1px solid #132019;
+}
+
+.bom th {
+  background: #0b120e;
+  color: var(--pcb-green);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.bom tr:last-child td {
+  border-bottom: none;
+}
+
+.bom tr:hover td {
+  background: rgba(31, 122, 79, 0.06);
+}
+
+/* mobile */
+@media (max-width: 600px) {
+  .bom th,
+  .bom td {
+    padding: 14px;
+    font-size: 0.95rem;
+  }
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+  color: #1f7a4f;
+}

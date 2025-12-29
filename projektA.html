@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Głośniki TWS – GarbaczPCB</title>
+  <link rel="icon" type="image/png" href="GarbaczPCB.png">
+  <link rel="stylesheet" href="styl.css">
+</head>
+<body>
+
+<header>
+  <div class="logo">GarbaczPCB</div>
+  <nav>
+    <a href="index.html">← Powrót</a>
+  </nav>
+</header>
+
+<section class="content">
+  <h2>Głośniki TWS</h2>
+
+  <p class="opis-projektu">
+    Głośniki TWS - projekt ma na celu stworzenie w pełni bezprzewodowej kolumny głośnikowej/monitora łączącego się z urządzeniem przez bluetooth. Może działać jako jedna jednostka lub dwie dzięki opcji True Wireless Stereo w <a href="projekt2.html">Module BT</a>. <br>  <br>
+    Aby stworzyć w pełni kompatybilny projekt, użyj podprojektów zawartych poniżej. Są tam podane wszystkie potrzebne informacje oraz wartości elementów odpowiednio policzone do wymagań projektu.
+
+    Używając części podanych poniżej użyj następujących połączeń:<br><br>
+    Zasilanie 12V+ do BT i AMP ⮕ <a href="projekt2.html">Moduł BT</a> ⮕ Wzmacniacz (Podane w <a href="projekt1.html">zwrotnica 3-drożna</a>) ⮕ <a href="projekt1.html">zwrotnica 3-drożna</a> ⮕ Kolumna.<br><br>
+    Każda płytka i źródło zasilania musi być podpięte do wspólnej masy. Abby to ułatwić na PCB znajdują się piny o nazwie GND_RAIL oraz otwory montażowe sa podłączone do masy rozlanej na płytce na warstwie top i bottom.
+  </p>
+
+  <div class="pcb-single">
+    <div class="pcb-card">
+      <img src="p1.jpg" alt="Głośniki TWS">
+      <span>Zdjęcie poglądowe końcowego produktu</span>
+    </div>
+  </div>
+
+  <!-- Kafelki z podprojektami -->
+  <h3 class="sekcja-tytul">Podprojekty</h3>
+  <div class="projekty-grid">
+    <a href="projekt1.html" class="projekt">
+      <img src="p1top.jpg" alt="Projekt 1">
+      <span>Zwrotnica 3 drożna</span>
+    </a>
+
+    <a href="projekt2.html" class="projekt">
+      <img src="p2top.jpg" alt="Projekt 2">
+      <span>Moduł BT</span>
+    </a>
+  </div>
+
+</section>
+
+</body>
+</html>
