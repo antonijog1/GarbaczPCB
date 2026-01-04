@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PROJEKT 3</title>
+  <title>Korektor graficzny stereo 5-pasmowy (Equalizer)</title>
   <link rel="icon" type="image/png" href="GarbaczPCB.png">
   <link rel="stylesheet" href="styl.css">
 </head>
@@ -17,20 +17,71 @@
 </header>
 
 <section class="content">
-  <h2>Projekt 1</h2>
+  <h2>Korektor graficzny stereo 5-pasmowy (Equalizer)</h2>
 
   <p class="opis-projektu">
-    Projekt PCB – widok warstwy TOP.<br>
-    Pliki Gerber przygotowane pod produkcję JLCPCB.
+    Stereofoniczny, pięciopasmowy korektor graficzny audio przeznaczony do korekcji charakterystyki częstotliwościowej toru elektroakustycznego. Układ składa się z dwóch całkowicie niezależnych torów sygnałowych (lewego i prawego), umożliwiających jednoczesną regulację pięciu pasm częstotliwości w zakresie około ±12 dB.<br><br>
+
+    Korektor zasilany jest pojedynczym napięciem 12 V DC i wykorzystuje obwód sztucznej masy, dzięki czemu nie wymaga zasilania symetrycznego. Może pracować jako samodzielne urządzenie stereo lub jako moduł do wbudowania w system audio. Projekt oparty na klasycznej konstrukcji korektora aktywnego, przeznaczony do zastosowań edukacyjnych i DIY.<br><br>
   </p>
 
   <div class="pcb-single">
     <div class="pcb-card">
-      <img src="p3top.jpg" alt="Projekt 1 – Top Layer PCB">
-      <span>Top Layer</span>
+      <img src="p3top.jpg" alt="Korektor graficzny stereo 5-pasmowy (Equalizer)">
+      <span>Top Layer PCB</span>
     </div>
   </div>
-</section>
 
+  <h3 class="sekcja-tytul">Lista komponentów (BOM)</h3>
+
+  <div class="bom-wrapper">
+  <table class="bom">
+    <thead>
+      <tr>
+        <th>Komponent</th>
+        <th>Wartość</th>
+        <th>Ilość</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <!-- Rezystory -->
+      <tr><td>RR1, RR18, RR22, RL1, RL18, RL22 - <a href="https://www.tme.eu/pl/details/wr08x1003ftl/rezystory-smd/walsin/">Rezystor: thick film</a></td><td>100kΩ</td><td>6</td></tr>
+      <tr><td>RR2, RR21, RL2, RL21 - <a href="https://www.tme.eu/pl/details/wr08x6801ftl/rezystory-smd/walsin/">Rezystor: thick film</a></td><td>6,8kΩ</td><td>4</td></tr>
+      <tr><td>RR3–RR7, RL3–RL7 - <a href="https://www.tme.eu/pl/details/erj6enf5602v/rezystory-smd/panasonic/">Rezystor: thick film</a></td><td>56kΩ</td><td>10</td></tr>
+      <tr><td>RR8–RR12, RL8–RL12 - <a href="https://www.tme.eu/pl/details/rca08051k00fkea/rezystory-smd/vishay/">Rezystor: thick film</a></td><td>1kΩ</td><td>10</td></tr>
+      <tr><td>RR13–RR17, RR20, RL13–RL17, RL20 - <a href="https://www.tme.eu/pl/details/wr08x4701ftl/rezystory-smd/walsin/">Rezystor: thick film</a></td><td>4,7kΩ</td><td>12</td></tr>
+      <tr><td>RR19, RL19 - <a href="https://www.tme.eu/pl/details/wr08x3901ftl/rezystory-smd/walsin/">Rezystor: thick film</a></td><td>3,9kΩ</td><td>2</td></tr>
+
+      <!-- Potencjometry -->
+      <tr><td>P1-P5 - <a href="https://pl.aliexpress.com/item/1005008771852513.html?spm=a2g0o.order_list.order_list_main.151.36ff1c24yGUago&gatewayAdapt=glo2pol">Potencjometr montażowy</a></td><td>10kΩ</td><td>5</td></tr>
+
+      <!-- Kondensatory -->
+      <tr><td>CR1, CR14, CR15, CL1, CL14, CL15 - <a href="https://www.tme.eu/pl/details/ce-10_50pht-y/kondensatory-elektrolityczne-tht/aishi/ewh1hm100d11ot/">Kondensator: elektrolityczny</a></td><td>10µF</td><td>6</td></tr>
+      <tr><td>CR2, CL2 - <a href="https://www.tme.eu/pl/details/0805b473k500cg/kondensatory-mlcc-smd/walsin/">Kondensator: ceramiczny</a></td><td>47nF</td><td>2</td></tr>
+      <tr><td>CR3, CL3 - <a href="https://www.tme.eu/pl/details/0805b105k500ct/kondensatory-mlcc-smd/walsin/">Kondensator: ceramiczny</a></td><td>1µF</td><td>2</td></tr>
+      <tr><td>CR4, CL4 - <a href="https://www.tme.eu/pl/details/0805b153k500ct/kondensatory-mlcc-smd/walsin/">Kondensator: ceramiczny</a></td><td>15nF</td><td>2</td></tr>
+      <tr><td>CR5, CL5 - <a href="https://www.tme.eu/pl/details/cl21b334kbfnnne/kondensatory-mlcc-smd/samsung/">Kondensator: ceramiczny</a></td><td>330nF</td><td>2</td></tr>
+      <tr><td>CR6, CL6 - <a href="https://www.tme.eu/pl/details/0805n472f500ct/kondensatory-mlcc-smd/walsin/">Kondensator: ceramiczny</a></td><td>4,7nF</td><td>2</td></tr>
+      <tr><td>CR7, CL7 - <a href="https://www.tme.eu/pl/details/0805b104k500ct/kondensatory-mlcc-smd/walsin/">Kondensator: ceramiczny</a></td><td>100nF</td><td>2</td></tr>
+      <tr><td>CR8, CL8 - <a href="https://www.tme.eu/pl/details/0805n152j500ct/kondensatory-mlcc-smd/walsin/">Kondensator: ceramiczny</a></td><td>1,5nF</td><td>2</td></tr>
+      <tr><td>CR9, CL9 - <a href="https://www.tme.eu/pl/details/0805b333k500ct/kondensatory-mlcc-smd/walsin/">Kondensator: ceramiczny</a></td><td>33nF</td><td>2</td></tr>
+      <tr><td>CR10, CL10 - <a href="https://www.tme.eu/pl/details/0805b471k500ct/kondensatory-mlcc-smd/walsin/">Kondensator: ceramiczny</a></td><td>470pF</td><td>2</td></tr>
+      <tr><td>CR11, CL11 - <a href="https://www.tme.eu/pl/details/0805b103k500ct/kondensatory-mlcc-smd/walsin/">Kondensator: ceramiczny</a></td><td>10nF</td><td>2</td></tr>
+      <tr><td>CR12, CL12 - <a href="https://www.tme.eu/pl/details/ce-100_25pht-y/kondensatory-elektrolityczne-tht/aishi/ewh1ev101e11ot/">Kondensator: elektrolityczny</a></td><td>100µF</td><td>2</td></tr>
+      <tr><td>CR13, CL13 - <a href="https://www.tme.eu/pl/details/0805n221j500ct/kondensatory-mlcc-smd/walsin/">Kondensator: ceramiczny</a></td><td>220pF</td><td>2</td></tr>
+      <tr><td>CR16, CL16 - <a href="https://www.tme.eu/pl/details/ce-470_35pht-y/kondensatory-elektrolityczne-tht/aishi/ewh1vm471g16ot/">Kondensator: elektrolityczny</a></td><td>470µF</td><td>2</td></tr>
+
+      <!-- Półprzewodniki -->
+      <tr><td>DL1,DL2 - <a href="https://www.tme.eu/pl/details/1n4007fltr-smc/diody-uniwersalne-smd/smc-diode-solutions/1n4007fltr/">Dioda: prostownicza</a></td><td>1N4007</td><td>2</td></tr>
+      <tr><td>TR1–TR5, TL1–TL5</td><td>BC548 lub podobny</td><td>10</td></tr>
+      <tr><td>USR1, USL1</td><td>OP07CP lub podobny</td><td>2</td></tr>
+      <tr><td>USR2, USL2</td><td>78L09</td><td>2</td></tr>
+
+    </tbody>
+  </table>
+</div>
+
+</section>
 </body>
 </html>
